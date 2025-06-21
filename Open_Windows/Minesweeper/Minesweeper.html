@@ -1,0 +1,34 @@
+<div class="minesweeper_body">
+  <div class="mine_options">
+    <div class="mine_options_OCD">
+      <div class="Minesweeper_drop_down">
+        <div class="Minesweeper_drop_down_label">Game</div>
+      </div>
+      <div class="Minesweeper_drop_down">
+        <div class="Minesweeper_drop_down_label">Help</div>
+      </div>
+    </div>
+  </div>
+  <section class="mine_content">
+    <div class="mine_score_bar">
+      <div id="mines-count" class="mine_digits_outer">
+        <img src="/Assets/minesweeper/digit0.png" alt="Digital number 0" /><img
+          src="/Assets/minesweeper/digit1.png"
+          alt="Digital number 1"
+        /><img src="/Assets/minesweeper/digit0.png" alt="Digital number 0" />
+      </div>
+      <div class="mine_face_outer">
+        <button class="reload" onclick="restart()">
+          <img src="/Assets/minesweeper/smile.png" alt="Smiley emoji" />
+        </button>
+      </div>
+      <div id="timer-display" class="mine_digits_outer">
+        <img id="digit-hundreds" src="/Assets/minesweeper/digit0.png" alt="Digital hundreds number" /><img id="digit-tens"
+          src="/Assets/minesweeper/digit0.png"
+          alt="Digital tens number"
+        /><img id="digit-units" src="/Assets/minesweeper/digit0.png" alt="Digital units number" />
+      </div>
+    </div>
+    <div id="board" class="mine_content_inner"></div>
+  </section>
+</div>

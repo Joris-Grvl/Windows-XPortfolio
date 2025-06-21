@@ -1,0 +1,161 @@
+.minesweeper_body {
+  font-family: Tahoma, "Noto Sans", sans-serif;
+}
+
+.mine_options {
+  height: 20px;
+  background: rgb(236, 233, 216);
+}
+
+.mine_options_OCD {
+  display: inline-flex;
+  height: 20px;
+  line-height: 20px;
+  position: relative;
+}
+
+.Minesweeper_drop_down {
+  font-size: 14px;
+  height: 100%;
+  position: relative;
+}
+
+.Minesweeper_drop_down_label {
+  padding: 0px 7px;
+}
+
+.Minesweeper_drop_down_label:hover {
+  color: white;
+  background-color: rgb(47, 113, 205);
+}
+
+.mine_content {
+  border-left: 3px solid rgb(245, 245, 245);
+  border-top: 3px solid rgb(245, 245, 245);
+  background-color: rgb(192, 192, 192);
+  padding: 5px;
+}
+
+.mine_score_bar {
+  height: 25px;
+  border-radius: 1px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: rgb(128, 128, 128) rgb(245, 245, 245) rgb(245, 245, 245)
+    rgb(128, 128, 128);
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3px 7px 3px 4px;
+
+  -webkit-box-align: center;
+  -webkit-box-pack: justify;
+}
+
+.mine_digits_outer {
+  width: auto;
+  height: 24px;
+  border-width: 0px 1px 1px 0px;
+  border-style: solid;
+  border-color: rgb(255, 255, 255);
+  text-align: right;
+}
+
+.mine_face_outer {
+  width: 24px;
+  height: 24px;
+  border-top: 1px solid rgb(128, 128, 128);
+  border-left: 1px solid rgb(128, 128, 128);
+  border-radius: 2px;
+  transform: translateX(1px);
+}
+
+.reload:active:hover {
+  border-width: 1px;
+  border-color: rgb(128, 128, 128);
+}
+
+.reload {
+  border-radius: 2px;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  background-color: rgb(192, 192, 192);
+  border-width: 2px;
+  border-style: solid;
+  border-color: rgb(245, 245, 245) rgb(128, 128, 128) rgb(128, 128, 128)
+    rgb(245, 245, 245);
+  outline: none;
+}
+
+.mine_content_inner {
+  display: grid;
+  grid-template-columns: repeat(8, 22px);
+  grid-template-rows: repeat(8, 22px);
+  border-width: 4px;
+  border-style: solid;
+  border-color: rgb(128, 128, 128) rgb(245, 245, 245) rgb(245, 245, 245)
+    rgb(128, 128, 128);
+}
+
+.Mine_ceil {
+  position: relative;
+}
+
+.Tile_style {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  box-sizing: border-box;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(245, 245, 245) rgb(128, 128, 128) rgb(128, 128, 128)
+    rgb(245, 245, 245);
+}
+
+.Tile_style:active {
+  background-color: rgb(192, 192, 192);
+  border-color: rgb(128, 128, 128) rgb(245, 245, 245) rgb(245, 245, 245)
+    rgb(128, 128, 128);
+}
+
+.game-over .Tile_style:active {
+  background-color: inherit !important;
+  border-color: rgb(245, 245, 245) rgb(128, 128, 128) rgb(128, 128, 128)
+    rgb(245, 245, 245) !important;
+}
+
+.Tile_style img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  object-fit: contain;
+}
+
+#board div {
+  width: 22px;
+  height: 22px;
+
+  border-width: 2px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tile-clicked {
+  width: 22px;
+  height: 22px;
+
+  box-sizing: border-box;
+
+  position: relative;
+  border-left: 1px solid rgb(128, 128, 128);
+  border-top: 1px solid rgb(128, 128, 128);
+}

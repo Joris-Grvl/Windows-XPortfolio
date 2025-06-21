@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Windows XPortfolio</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/Assets/Images/Windows_XP.webp"
+    />
+    <link rel="preload" as="image" href="/Assets/Images/Background.webp" type="image/webp">
+
+    <link rel="preload" href="/Start_Menu/Log_Off/Transition/Log_Off_Transition.html" as="fetch"/>
+
+    <link rel="preload" href="/Start_Menu/Log_Off/Base/Log_Off.css" as="style" onload="this.onload=null;this.rel='stylesheet';"/>
+
+    <link rel="stylesheet" href="/Loader.css" />
+    <link rel="stylesheet" href="/Loader_Login/Login_Screen.css" />
+
+    <script src="/Start_Menu/Log_Off/Transition/Log_Off_Transition.js"></script>
+
+    <script src="/Loader_Login/Loader_Login.js"></script>
+    <script src="/Bureau/Bureau.js"></script>
+  </head>
+  <body>
+    <div id="login-screen" class="hidden">
+      <div id="top-bar"></div>
+
+      <div id="content">
+        <div id="left-panel">
+          <img src="/Assets/Images/White writting Windows XP logo.png" alt="Windows XP Logo" id="xp-logo" />
+          <p>To begin, click your user name</p>
+        </div>
+
+        <div id="user-list">
+          <div class="user" id="guest-user" onclick="loginAsGuest()">
+            <img src="/Assets/Images/Flower PP.png" alt="Guest" />
+            <div class="user-text">
+              <span>Visitor</span>
+            </div>
+          </div>
+          <div class="user" id="admin-user">
+            <img src="/Assets/Images/user.png" alt="Guest" />
+            <div class="user-text">
+              <span>Whistler</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="bottom-bar">
+        <div id="left-section">
+          <img
+            id="Power"
+            src="/Assets/Windows XP High Resolution Icon Pack avec MAOSX/Windows XP High Resolution Icon Pack/Windows XP Icons/Power.png"
+            alt="Turn off computer button" 
+            onclick="turnOffComputer()"
+          />
+          <p id="shutdown-p" onclick="turnOffComputer()">Turn off computer</p>
+        </div>
+        <p id="right-text">
+          After you log on, you can add or change accounts. </br>
+          Just go to Control Panel and click User Accounts.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,131 @@
+.drop-down__menu {
+  z-index: 1;
+  padding: 2px;
+  line-height: 18px;
+  display: grid;
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  box-shadow: rgb(129, 129, 129) 2px 2px 3px;
+  border: 1px solid gray;
+  grid-template-columns: 16px auto auto 15px 0px;
+}
+
+.drop-down__row--disable:hover > * {
+  background: rgb(233, 159, 23);
+  filter: invert(100%);
+}
+
+.drop-down__row:hover > * {
+  background: rgb(233, 159, 23);
+  filter: invert(100%);
+}
+
+.drop-down__row:hover img {
+  filter: invert(100%);
+}
+
+.drop-down__row--disable {
+  display: contents;
+  color: rgba(140, 140, 140, 0.71);
+}
+
+.drop-down__check {
+  grid-column: 1;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+}
+
+.drop-down__text {
+  white-space: nowrap;
+  padding-right: 8px;
+  grid-column: 2;
+}
+
+.drop-down__hot-key {
+  white-space: nowrap;
+  grid-column: 3;
+  padding-right: 2px;
+}
+
+.drop-down__arrow--disable {
+  grid-column: 4;
+  width: 100%;
+  height: 100%;
+}
+
+.drop-down__separator {
+  grid-column: 1 / 5;
+  height: 1px;
+  padding: 3px 1px;
+  background-color: rgba(0, 0, 0, 0.2);
+  background-clip: content-box;
+}
+
+.drop-down__row {
+  position: relative;
+  display: contents;
+}
+
+.drop-down__arrow::before {
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: 3px 0px 3px 3px;
+  border-color: transparent transparent transparent rgb(0, 0, 0);
+  content: "";
+  display: block;
+}
+
+.drop-down__check {
+  grid-column: 1;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+}
+
+.drop-down__row--active {
+  position: relative;
+  display: contents;
+}
+
+.drop-down__row--active > :not(:nth-child(5)) {
+  background: rgb(233, 159, 23);
+  filter: invert(100%);
+}
+
+.drop-down__arrow {
+  position: relative;
+  grid-column: 4;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+}
+
+.drop-down__icon {
+  max-width: 13px;
+  max-height: 13px;
+  transform: translateX(-2px);
+}
+
+.drop-down__row--active > .drop-down__check > .drop-down__icon {
+  filter: invert(100%);
+}
+
+
+.window-tooltip--secondary {
+  position: absolute;
+  z-index: 9999;
+  background: #fff;
+  border: 1px solid #888;
+  padding: 6px 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}

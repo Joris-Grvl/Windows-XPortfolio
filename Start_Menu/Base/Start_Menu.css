@@ -1,0 +1,319 @@
+.BigRectangle {
+  /*overflow: hidden;*/
+  border-radius: 5px;
+  position: absolute;
+  left: 0px;
+  box-shadow: rgba(0, 0, 0, 0.5) 2px 4px 2px;
+  bottom: 100%;
+}
+
+.OCD {
+  font-size: 11px;
+  line-height: 14px;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-align: center;
+  align-items: center;
+  background-color: rgb(66, 130, 214);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.StartMenuHeader {
+  position: relative;
+  font-family: trebuc, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  text-shadow: rgba(0, 0, 0, 0.7) 1px 1px;
+  align-self: flex-start;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  color: rgb(255, 255, 255);
+  height: 50px;
+  padding: 6px 5px 5px;
+  width: 405px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  background: linear-gradient(
+    rgb(24, 104, 206) 0%,
+    rgb(14, 96, 203) 12%,
+    rgb(14, 96, 203) 20%,
+    rgb(17, 100, 207) 32%,
+    rgb(22, 103, 207) 33%,
+    rgb(27, 108, 211) 47%,
+    rgb(30, 112, 217) 54%,
+    rgb(36, 118, 220) 60%,
+    rgb(41, 122, 224) 65%,
+    rgb(52, 130, 227) 77%,
+    rgb(55, 134, 229) 79%,
+    rgb(66, 142, 233) 90%,
+    rgb(71, 145, 235) 100%
+  );
+}
+
+.StartMenuHeader::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 1px;
+  left: 0px;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(
+    to right,
+    transparent 0px,
+    rgba(255, 255, 255, 0.3) 1%,
+    rgba(255, 255, 255, 0.5) 2%,
+    rgba(255, 255, 255, 0.5) 95%,
+    rgba(255, 255, 255, 0.3) 98%,
+    rgba(255, 255, 255, 0.2) 99%,
+    transparent 100%
+  );
+  box-shadow: rgb(14, 96, 203) 0px -1px 1px inset;
+}
+
+.StartMenuHeader img {
+  width: 42px;
+  height: 42px;
+  margin-right: 5px;
+  border-radius: 3px;
+  border: 2px solid rgba(222, 222, 222, 0.8);
+}
+
+.Menu {
+  display: flex;
+  margin: 0px 2px;
+  position: relative;
+  border-top: 1px solid rgb(56, 93, 231);
+  box-shadow: rgb(56, 93, 231) 0px 1px;
+  width: auto;
+  height: 100%;
+}
+
+.OrangeLine {
+  display: block;
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  top: -6px;
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0) 0%,
+    rgb(218, 136, 74) 50%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  border: 0px;
+}
+
+.LeftMenu {
+  background-color: rgb(255, 255, 255);
+  padding: 6px 5px 0px;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  color: black;
+  font-family: trebuc, sans-serif;
+  font-size: 11px;
+}
+
+.RightMenu {
+  background-color: rgb(203, 227, 255);
+  border-left: 1px solid rgba(58, 58, 255, 0.37);
+  padding: 6px 5px 5px;
+  width: 190px;
+  color: rgb(0, 19, 107);
+  font-family: trebuc, sans-serif;
+  font-size: 11px;
+}
+
+.RightMenu .MenuItemImg {
+  margin-right: 3px;
+  width: 22px;
+  height: 22px;
+}
+
+.Menu .RightMenu .ItemMenu {
+  width: 179px;
+  height: 26px;
+  margin-bottom: 4px;
+  line-height: 13px;
+}
+
+.Menu .RightMenu .ItemMenu:nth-child(-n + 5) .MenuItemTxt,
+.Menu .LeftMenu .ItemMenu:nth-child(-n + 2) .MenuItemTxt,
+.Menu .LeftMenu .ItemMenu:last-child .MenuItemTxt {
+  font-weight: 700;
+}
+
+.ItemMenu {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  margin-bottom: 4px;
+  height: 34px;
+  padding: 1px;
+}
+
+.ItemMenu img {
+  margin-right: 3px;
+}
+
+.ItemMenu:hover {
+  color: white;
+  background-color: rgb(47, 113, 205);
+}
+
+.ItemMenu:hover .MenuItemSubtxt {
+  color: white;
+}
+.ItemMenu:hover .MenuArrow {
+  border-left-color: white;
+}
+
+.MenuItemImg {
+  width: 35px;
+  height: 35px;
+}
+
+.MenuItemTxts {
+  display: flex;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  justify-content: center;
+  height: 100%;
+  position: relative;
+}
+
+.MenuItemSubtxt {
+  color: rgba(0, 0, 0, 0.4);
+  line-height: 12px;
+  margin-bottom: 1px;
+}
+
+.MenuSeparator {
+  height: 2px;
+  background: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.1) 50%,
+      rgba(0, 0, 0, 0) 100%
+    )
+    content-box;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+}
+
+.AllProgMenu {
+  position: static;
+  
+  margin-bottom: 5px;
+}
+
+.AllProgTxt {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  gap: 5px;
+  font-size: 12px;
+  line-height: 14px;
+  height: 25px;
+}
+
+.AllProgMenu:hover {
+  color: white;
+  background-color: rgb(47, 113, 205);
+}
+
+.AllProgImg {
+  width: 20px;
+}
+
+.MenuArrow {
+  border-width: 3.5px 0px 3.5px 3.5px;
+  border-top-style: solid;
+  border-bottom-style: solid;
+  border-left-style: solid;
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  border-image: initial;
+  border-right-style: initial;
+  border-right-color: initial;
+  border-left-color: rgb(0, 19, 107);
+  position: absolute;
+  left: 140px;
+}
+
+/*
+.AllProgMenuDropDown {
+  position: absolute;
+  z-index: 1;
+  left: 100%;
+  bottom: -1px;
+  background-color: white;
+  padding-left: 1px;
+  box-shadow: rgb(114, 173, 233) 0px 0px 0px 1px inset,
+    rgba(0, 0, 0, 0.5) 2px 3px 3px;
+}
+
+.AllProgMenuDropDownItem {
+  height: 25px;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  padding: 0px 22px 0px 10px;
+  box-shadow: rgb(64, 129, 255) 3px 0px inset;
+  position: relative;
+  color: black;
+} */
+
+.footer_item {
+  font-family: trebuc, sans-serif;
+  font-size: 11px;
+  padding: 3px;
+  display: flex;
+  margin-right: 10px;
+  -webkit-box-align: center;
+  align-items: center;
+}
+
+.footer_item img {
+  width: 25px;
+  height: 25px;
+  margin-right: 5px;
+}
+
+.FooterStartMenu {
+  position: relative;
+  display: flex;
+  align-self: flex-end;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: end;
+  justify-content: flex-end;
+  color: rgb(255, 255, 255);
+  height: 40px;
+  width: 100%;
+  background: linear-gradient(
+    rgb(66, 130, 214) 0%,
+    rgb(59, 133, 224) 3%,
+    rgb(65, 138, 227) 5%,
+    rgb(65, 138, 227) 17%,
+    rgb(60, 135, 226) 21%,
+    rgb(55, 134, 228) 26%,
+    rgb(52, 130, 227) 29%,
+    rgb(46, 126, 225) 39%,
+    rgb(35, 116, 223) 49%,
+    rgb(32, 114, 219) 57%,
+    rgb(25, 110, 219) 62%,
+    rgb(23, 107, 216) 72%,
+    rgb(20, 104, 213) 75%,
+    rgb(17, 101, 210) 83%,
+    rgb(15, 97, 203) 88%
+  );
+}

@@ -1,0 +1,55 @@
+.notepad_body {
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgb(237, 237, 229) 0%,
+    rgb(237, 232, 205) 100%
+  );
+  display: flex;
+  flex-direction: column;
+  -webkit-box-align: stretch;
+  align-items: stretch;
+
+  font-family: Tahoma, "Noto Sans", sans-serif;
+}
+
+.toolbar {
+  position: relative;
+  height: 21px;
+  flex-shrink: 0;
+  border-bottom: 1px solid white;
+}
+
+.toolbar_OCD {
+  display: inline-flex;
+  height: 20px;
+  line-height: 20px;
+  position: relative;
+}
+
+.drop_down {
+  font-size: 11px;
+  height: 100%;
+  position: relative;
+}
+
+.drop_down_label {
+  padding: 0px 7px;
+}
+
+.drop_down_label:hover {
+  background-color: rgb(22, 96, 232);
+  color: rgb(255, 255, 255);
+}
+
+.write {
+  flex: 1 1 auto;
+  outline: none;
+  font-family: "Lucida Console", monospace;
+  font-size: 13px;
+  line-height: 14px;
+  resize: none;
+  padding: 2px;
+  overflow-y: scroll;
+  border: 1px solid rgb(150, 171, 255);
+}

@@ -1,0 +1,541 @@
+.Internet_Explorer_6_Body {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  background: linear-gradient(
+    to right,
+    rgb(237, 237, 229) 0%,
+    rgb(237, 232, 205) 100%
+  );
+
+  font-family: Tahoma, "Noto Sans", sans-serif;
+}
+
+.IE_toolbar {
+  position: relative;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  line-height: 100%;
+  height: 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+  flex-shrink: 0;
+}
+
+.IE_options {
+  height: 23px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  border-right: 1px solid rgba(0, 0, 0, 0.15);
+  padding-left: 2px;
+  flex: 1 1 0%;
+}
+
+.IE_options_OCD {
+  display: inline-flex;
+  height: 21px;
+  line-height: 21px;
+  position: relative;
+}
+
+.drop_down {
+  font-size: 11px;
+  height: 100%;
+  position: relative;
+}
+
+.drop_down_label {
+  padding: 0px 7px;
+}
+
+.drop_down_label:hover {
+  background-color: rgb(22, 96, 232);
+  color: rgb(255, 255, 255);
+}
+
+.drop_down_label--active {
+  background-color: rgb(22, 96, 232);
+  color: rgb(255, 255, 255);
+}
+
+.IE_windows-logo {
+  height: 100%;
+  border-left: 1px solid white;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.IE_function_bar {
+  height: 36px;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  font-size: 11px;
+  padding: 1px 3px 0px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.IE_function_bar_button--disable {
+  filter: grayscale(1);
+  opacity: 0.5;
+  display: flex;
+  height: 100%;
+  -webkit-box-align: center;
+  align-items: center;
+  border: 1px solid rgba(0, 0, 0, 0);
+}
+
+.IE_function_bar_icon {
+  height: 25px;
+  width: 25px;
+  margin: 0px 5px 0px 5px;
+}
+
+.IE_function_bar_text {
+  margin-right: 4px;
+}
+
+.IE_function_bar_arrow {
+  height: 100%;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  margin: 0px 4px;
+}
+
+.IE_function_bar_arrow::before {
+  content: "";
+  display: block;
+  border-width: 3px 3px 0px;
+  border-color: rgb(0, 0, 0) transparent;
+  border-style: solid;
+}
+
+.IE_function_bar_button {
+  display: flex;
+  height: 100%;
+  -webkit-box-align: center;
+  align-items: center;
+  border: 1px solid rgba(0, 0, 0, 0);
+  border-radius: 3px;
+}
+
+.IE_function_bar_button:hover {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px -1px 1px inset;
+}
+
+.IE_function_bar_button:hover:active {
+  border: 1px solid rgb(185, 185, 185);
+  background-color: rgb(222, 222, 222);
+  box-shadow: rgba(255, 255, 255, 0.7) 0px -1px 1px inset;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.IE_function_bar_button:hover:active > * {
+  transform: translate(1px, 1px);
+}
+
+.IE_function_bar_icon--margin-1 {
+  margin: 0px -1px;
+  height: 25px;
+  width: 25px;
+}
+
+.IE_function_bar_separate {
+  height: 90%;
+  width: 1px;
+  background-color: rgba(0, 0, 0, 0.2);
+  margin: 0px 2px;
+}
+
+.IE_function_bar_icon--normalize {
+  height: 22px;
+  width: 22px;
+  margin: 0px 4px 0px 1px;
+}
+
+.IE_function_bar_arrow--margin-11 {
+  height: 100%;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  margin: 0px 1px 0px -1px;
+}
+
+.IE_function_bar_icon--margin12 {
+  height: 22px;
+  width: 22px;
+  margin: 0px 1px 0px 2px;
+}
+
+.IE_address_bar {
+  border-top: 1px solid rgba(255, 255, 255, 0.7);
+  height: 22px;
+  font-size: 11px;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  padding: 0px 2px 2px;
+  box-shadow: rgb(45, 45, 45) 0px -2px 3px -1px inset;
+}
+
+.IE_address_bar_title {
+  line-height: 100%;
+  color: rgba(0, 0, 0, 0.5);
+  padding: 5px;
+}
+
+.IE_address_bar_IE_content {
+  border: 1px solid rgba(122, 122, 255, 0.6);
+  height: 85%;
+  display: flex;
+  flex: 1 1 0%;
+  -webkit-box-align: center;
+  align-items: center;
+  background-color: white;
+  position: relative;
+}
+
+.IE_address_bar_IE_content_img {
+  width: 14px;
+  height: 14px;
+}
+
+.IE_address_bar_IE_content_text {
+  position: absolute;
+  white-space: nowrap;
+  left: 16px;
+  right: 17px;
+  overflow: hidden;
+}
+
+.IE_address_bar_IE_content_img:last-child {
+  width: 15px;
+  height: 15px;
+  right: 1px;
+  position: absolute;
+}
+
+.IE_address_bar_IE_content_img:last-child:hover {
+  filter: brightness(1.1);
+}
+
+.IE_address_bar_go {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  padding: 0px 18px 0px 5px;
+  height: 100%;
+  position: relative;
+}
+
+.IE_address_bar_go_img {
+  height: 95%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  margin-right: 3px;
+}
+
+.IE_address_bar_separate {
+  height: 100%;
+  width: 1px;
+  background-color: rgba(0, 0, 0, 0.1);
+  box-shadow: rgba(255, 255, 255, 0.7) 1px 0px;
+}
+
+.IE_address_bar_links {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  padding: 0px 18px 0px 5px;
+  height: 100%;
+  position: relative;
+}
+
+.IE_address_bar_links_text {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.IE_address_bar_links_img {
+  position: absolute;
+  right: 2px;
+  top: 3px;
+  height: 5px;
+  width: 8px;
+}
+
+.IE_content {
+  flex: 1 1 0%;
+  overflow: auto;
+  padding-left: 1px;
+  border-left: 1px solid rgb(111, 111, 111);
+  background-color: rgb(241, 241, 241);
+  position: relative;
+}
+
+.IE_content_inner {
+  position: relative;
+  min-height: 800px;
+  min-width: 800px;
+  width: 100%;
+  height: 100%;
+}
+
+.IE_content_inner_OCD {
+  height: 100%;
+  background: white;
+  position: relative;
+}
+
+.IE_header {
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  -webkit-box-pack: end;
+  justify-content: flex-end;
+  -webkit-box-align: center;
+  align-items: center;
+  font-size: 13px;
+  color: rgb(80, 80, 80);
+}
+
+.IE_header * {
+  padding-right: 15px;
+  cursor: pointer;
+}
+
+.IE_header img {
+  width: 40px;
+}
+
+.Section_IE_content {
+  display: flex;
+  flex-direction: column;
+  -webkit-box-align: center;
+  align-items: center;
+}
+
+.IE_content .logo {
+  height: 92px;
+  width: 272px;
+  margin-top: 198px;
+}
+
+.IE_content .search-bar {
+  margin-left: 11px;
+  margin-top: 26px;
+  width: 586px;
+  height: 46px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 2px -1px;
+  border-radius: 2px;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  padding: 0px 8px 0px 16px;
+}
+
+.IE_content .search-bar:hover {
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 8px -1px;
+}
+
+.IE_content .search-bar input {
+  color: rgba(0, 0, 0, 0.87);
+  flex: 1 1 0%;
+  height: 34px;
+  margin-top: 5px;
+  font-size: 16px;
+  border: 0px;
+  outline: 0px;
+}
+
+.IE_content .search-bar .icon {
+  width: 40px;
+  padding: 0px 8px;
+  height: 44px;
+  cursor: pointer;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  margin-bottom: 0;
+}
+
+.IE_content .search-bar .icon img {
+  height: 24px;
+  width: 24px;
+}
+
+.IE_content .buttons {
+  width: 100%;
+  height: 36px;
+  margin-top: 31px;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+}
+
+.IE_content .buttons button {
+  padding: 0px 16px;
+  height: 36px;
+  margin: 0px 6px;
+  font-weight: 700;
+  font-size: 13px;
+  color: rgb(120, 120, 120);
+  border: 1px solid transparent;
+  background: rgb(242, 242, 242);
+}
+
+.IE_content .buttons button:hover {
+  border-radius: 2px;
+  color: rgb(34, 34, 34);
+  background: rgb(248, 248, 248);
+  border: 1px solid rgb(198, 198, 198);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 2px -1px;
+}
+
+.IE_Upper_footer {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  height: 83px;
+  border-top: 1px solid rgba(0, 0, 0, 0.07);
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.IE_Upper_footer .items {
+  position: absolute;
+  height: 100%;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+}
+
+.IE_Upper_footer .upper {
+  position: relative;
+  color: rgba(0, 0, 0, 0.54);
+  width: 100%;
+  font-size: 15px;
+  padding-bottom: 2px;
+  height: 50%;
+}
+
+.IE_Upper_footer .left {
+  left: 3px;
+}
+
+.IE_Upper_footer .left .item {
+  padding-left: 27px;
+}
+
+.IE_Upper_footer .lower {
+  position: relative;
+  border-top: 1px solid rgba(0, 0, 0, 0.07);
+  height: 50%;
+  color: rgb(95, 99, 104);
+  font-size: 13px;
+  width: 100%;
+}
+
+.IE_Upper_footer .left {
+  left: 3px;
+}
+
+.IE_Upper_footer .lower .item {
+  cursor: pointer;
+}
+
+.IE_Upper_footer .lower .item:hover {
+  text-decoration: underline;
+}
+
+.IE_Upper_footer .left .item {
+  padding-left: 27px;
+}
+
+.IE_Upper_footer .right {
+  right: 3px;
+}
+
+.IE_Upper_footer .right .item {
+  padding-right: 27px;
+}
+
+.IE_footer {
+  height: 20px;
+  border-top: 1px solid transparent;
+  box-shadow: rgba(50, 50, 50, 0.8) 0px 1px 3px inset;
+  background-color: rgb(236, 233, 216);
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  padding-top: 2px;
+}
+
+.IE_footer_status {
+  flex: 1 1 0%;
+  height: 100%;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  padding-left: 2px;
+}
+
+.IE_footer_status_img {
+  height: 14px;
+  width: 14px;
+  margin-right: 3px;
+}
+
+.IE_footer_status_text {
+  font-size: 11px;
+}
+
+.IE_footer_block {
+  height: 85%;
+  width: 22px;
+  border-left: 1px solid rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(255, 255, 255, 0.7) 1px 0px inset;
+}
+
+.IE_footer_right {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  width: 150px;
+  height: 80%;
+  border-left: 1px solid rgba(0, 0, 0, 0.11);
+  box-shadow: rgba(255, 255, 255, 0.7) 1px 0px inset;
+  padding-left: 5px;
+  position: relative;
+}
+
+.IE_footer_right_img {
+  height: 14px;
+  width: 14px;
+  margin-right: 3px;
+}
+
+.IE_footer_right_text {
+  font-size: 11px;
+}
+
+.IE_footer_right_dots {
+  position: absolute;
+  right: 11px;
+  bottom: -1px;
+  width: 2px;
+  height: 2px;
+  box-shadow: rgba(0, 0, 0, 0.25) 2px 0px, rgba(0, 0, 0, 0.25) 5.5px 0px,
+    rgba(0, 0, 0, 0.25) 9px 0px, rgba(0, 0, 0, 0.25) 5.5px -3.5px,
+    rgba(0, 0, 0, 0.25) 9px -3.5px, rgba(0, 0, 0, 0.25) 9px -7px,
+    rgb(255, 255, 255) 3px 1px, rgb(255, 255, 255) 6.5px 1px,
+    rgb(255, 255, 255) 10px 1px, rgb(255, 255, 255) 10px -2.5px,
+    rgb(255, 255, 255) 10px -6px;
+}

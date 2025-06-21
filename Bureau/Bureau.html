@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Windows XPortfolio</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/Assets/Images/Windows_XP.webp"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="/Assets/Images/Background.webp"
+      type="image/webp"
+    />
+
+    <link
+      rel="preload"
+      href="/Start_Menu/Log_Off/Base/Log_Off.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet';"
+    />
+    <link
+      rel="preload"
+      href="/Start_Menu/Base/Start_Menu.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet';"
+    />
+    <link
+      rel="preload"
+      href="/Open_Windows/Base/OpenWindow_Tooltip.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet';"
+    />
+    <link
+      rel="preload"
+      href="/Start_Menu/All_Programs/Tooltip/Tooltip.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet';"
+    />
+    <link
+      rel="preload"
+      href="/Bureau/Taskbar.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet';"
+    />
+    <link
+      rel="preload"
+      href="/Open_Windows/Base/Open_Window.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet';"
+    />
+
+    <link rel="stylesheet" href="/Bureau/Bureau.css" />
+
+    <script src="/Bureau/Bureau.js"></script>
+    <script src="/Open_Windows/Minesweeper/Minesweeper.js"></script>
+  </head>
+  <body>
+    <div
+      id="main-content"
+      style="
+        background: url('/Assets/Images/Background.webp') no-repeat center
+          center fixed;
+        background-size: cover;
+        min-height: 100vh;
+      "
+    >
+      <div id="desktop">
+        <div class="icon" ondblclick="openWindow('My Computer')">
+          <img
+            src="/Assets/Windows XP High Resolution Icon Pack avec MAOSX/Windows XP High Resolution Icon Pack/Windows XP Icons/My Computer.png"
+            alt="My Computer"
+          />
+          <span>My Computer</span>
+        </div>
+        <div class="icon" ondblclick="openWindow('Recycle Bin (empty)')">
+          <img
+            src="/Assets/Windows XP High Resolution Icon Pack avec MAOSX/Windows XP High Resolution Icon Pack/Windows XP Icons/Recycle Bin (empty).png"
+            alt="Recycle Bin"
+          />
+          <span>Recycle Bin</span>
+        </div>
+        <div class="icon" ondblclick="openWindow('Internet Explorer 6')">
+          <img
+            src="/Assets/Windows XP High Resolution Icon Pack avec MAOSX/Windows XP High Resolution Icon Pack/Windows XP Icons/Internet Explorer 6.png"
+            alt="Internet Explorer"
+          />
+          <span>Internet Explorer</span>
+        </div>
+        <div
+          class="icon"
+          ondblclick="openWindow('Minesweeper'), SetLvl('Beginner')"
+        >
+          <img
+            src="/Assets/Windows XP High Resolution Icon Pack avec MAOSX/Windows XP High Resolution Icon Pack/Windows XP Icons/Minesweeper.png"
+            alt="Minesweeper"
+          />
+          <span>Minesweeper</span>
+        </div>
+        <div class="icon" ondblclick="openWindow('Paint')">
+          <img
+            src="/Assets/Windows XP High Resolution Icon Pack avec MAOSX/Windows XP High Resolution Icon Pack/Windows XP Icons/Paint.png"
+            alt="Paint"
+          />
+          <span>Paint</span>
+        </div>
+        <div class="icon" ondblclick="openWindow('Notepad')">
+          <img
+            src="/Assets/Windows XP High Resolution Icon Pack avec MAOSX/Windows XP High Resolution Icon Pack/Windows XP Icons/Notepad.png"
+            alt="Paint"
+          />
+          <span>Notepad</span>
+        </div>
+        <div class="icon" ondblclick="openRawWinamp()">
+          <img src="/Assets/Images/Winamp-logo.png" alt="Winamp" />
+          <span>Winamp</span>
+        </div>
+        <div class="icon" ondblclick="openWindow('LinkedIn')">
+          <img src="/Assets/Images/LinkedIn_logo_initials.png" alt="LinkedIn" />
+          <span>LinkedIn</span>
+        </div>
+        <div
+          class="icon"
+          id="centered-folder"
+          ondblclick="openWindow('Folder')"
+        >
+          <img
+            src="/Assets/Windows XP High Resolution Icon Pack avec MAOSX/Windows XP High Resolution Icon Pack/Windows XP Icons/Folder Closed.png"
+            alt="Projets Under Construct ! Folder"
+          />
+          <span>Projects Under Construct !</span>
+        </div>
+      </div>
+      <footer id="Desktop_Footer" class="footer_original">
+        <div class="footer__items left">
+          <div class="footer__start_menu" onclick="openStartMenu()">
+            <img
+              src="/Assets/Images/windows_xp_start_button_normal.png"
+              id="start-button"
+              class="footer__start"
+              alt="start"
+            />
+          </div>
+        </div>
+        <div class="footer__items right">
+          <img
+            class="footer__icon"
+            src="/Assets/Windows XP High Resolution Icon Pack avec MAOSX/Windows XP High Resolution Icon Pack/Windows XP Icons/Security - Ok.png"
+            alt=""
+          />
+          <img
+            class="footer__icon"
+            src="/Assets/Windows XP High Resolution Icon Pack avec MAOSX/Windows XP High Resolution Icon Pack/Windows XP Icons/Volume.png"
+            alt=""
+          />
+          <img
+            class="footer__icon"
+            src="/Assets/Windows XP High Resolution Icon Pack avec MAOSX/Windows XP High Resolution Icon Pack/Windows XP Icons/Safely Remove Hardware.png"
+            alt=""
+          />
+          <div class="footer__time" id="footer-time"></div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

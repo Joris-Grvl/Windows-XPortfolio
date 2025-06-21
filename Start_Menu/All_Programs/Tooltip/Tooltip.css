@@ -1,0 +1,80 @@
+.hover-info {
+  background-color: white;
+  color: black;
+  font-size: 14px;
+  position: absolute;
+  transform: translateY(-92%) translateX(-50px);
+  font-family: trebuc, sans-serif;
+  padding-left: 1px;
+  box-shadow: rgb(114, 173, 233) 0px 0px 0px 1px inset,
+    rgba(0, 0, 0, 0.5) 2px 3px 3px, rgb(64, 129, 255) 4px 0px inset;
+}
+
+.hover-infoitm {
+  height: 25px;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  padding: 0px 22px 0px 10px;
+  position: relative;
+  color: black;
+  box-shadow: rgb(64, 129, 255) 3px 0px inset;
+}
+
+.hover-info img {
+  margin-right: 6px;
+  width: 16px;
+  height: 16px;
+}
+
+.hover-infotxt {
+  font-size: 11px;
+  white-space: nowrap;
+  font-weight: 500;
+}
+
+.hover-infospeparator {
+  padding: 0px 5px;
+  height: 2px;
+  box-shadow: rgb(64, 129, 255) 3px 0px inset;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.1) 50%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+.hover-infoitm:hover {
+  color: white;
+  background-color: rgb(47, 113, 205);
+}
+
+.hover-infoarrow {
+  position: absolute;
+  right: 0px;
+  height: 100%;
+  width: 10px;
+}
+
+.hover-infoarrow::before {
+  top: 9px;
+  right: 6px;
+  content: "";
+  display: block;
+  border-width: 4px 0px 4px 4px;
+  border-top-style: solid;
+  border-bottom-style: solid;
+  border-left-style: solid;
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  border-image: initial;
+  border-right-style: initial;
+  border-right-color: initial;
+  border-left-color: rgb(0, 0, 0);
+  position: absolute;
+}
+
+.hover-infoitm:hover > .hover-infoarrow::before {
+  border-left-color: white;
+}

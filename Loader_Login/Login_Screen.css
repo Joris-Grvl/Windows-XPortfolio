@@ -1,0 +1,400 @@
+@font-face {
+  font-family: "Windows XP Tahoma";
+  src: local("Windows-XP-Tahoma"),
+    url("/Assets/Fonts/Windows-XP-Tahoma.woff2") format("woff2"),
+    url("/Assets/Fonts/windows-xp-tahoma.woff") format("woff"),
+    url("/Assets/Fonts/windows-xp-tahoma.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@keyframes glitchOpacity {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes glitchOpacityReverse {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+@keyframes paddingTopLog {
+  0% {
+    padding-top: 13%;
+  }
+  100% {
+    padding-top: 18%;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Tahoma, Verdana, sans-serif;
+}
+.hidden {
+  display: none;
+}
+
+#login-screen {
+  width: 100%;
+  height: 100vh;
+  background: #5a7edc;
+  display: flex;
+  flex-direction: column;
+
+  background-image: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.719) -21%,
+    rgba(255, 255, 255, 0) 60%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background-size: 1000px 1000px;
+  background-position: -400px -330px;
+  background-repeat: no-repeat;
+}
+
+#top-bar,
+#bottom-bar {
+  width: 100%;
+  height: 10%;
+  background: #00309c;
+}
+
+#top-bar {
+  border-bottom: 3px solid;
+  border-image: linear-gradient(to right, #6085dc, #a7c4ef 40%, #0f3aa1) 1;
+}
+
+#content {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+#content::after {
+  content: "";
+  position: absolute;
+  left: 50;
+  top: 10%;
+  bottom: 10%;
+  width: 2px;
+  background: linear-gradient(to bottom, #5a7edc, #6d90e3 50%, #5a7edc);
+  transform: translateX(-50%);
+}
+
+#left-panel {
+  width: 100%;
+  text-align: right;
+  color: white;
+  padding-right: 2%;
+  padding-top: 14%;
+}
+
+#left-panel p {
+  color: white;
+  font-size: x-large;
+  padding-right: 4%;
+}
+
+#xp-logo {
+  width: 200px;
+  margin-bottom: 20px;
+}
+
+#user-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding-left: 2%;
+  padding-top: 13%;
+}
+
+.user.glitch-out {
+  animation: glitchOpacityReverse 0.4s steps(5, end);
+  opacity: 1;
+}
+
+.user {
+  display: flex;
+  width: 70%;
+  padding: 1%;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.user-text {
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+}
+
+.user.selected {
+  cursor: pointer;
+  position: relative;
+}
+
+.user.selected p {
+  cursor: pointer;
+  color: white;
+}
+
+.user.selected::before,
+.user.selected::after {
+  content: "";
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  bottom: -1px;
+  left: -1px;
+  border-radius: 8px;
+  pointer-events: none;
+}
+
+.user.selected::before {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.6) 40%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  margin: -1px;
+}
+
+.user.selected::after {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 72, 154, 1) 60%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+.user img {
+  width: 70px;
+  margin-right: 15px;
+  border: 2px solid white;
+  border-radius: 10%;
+  box-shadow: 1px 1px 2px 0px rgba(46, 46, 46, 1);
+  z-index: 1;
+}
+
+.user span {
+  font-size: 24px;
+  color: white;
+  max-height: fit-content;
+  z-index: 1;
+}
+
+.user p {
+  font-size: 11px;
+  color: #00309c;
+  max-height: fit-content;
+  font-family: Windows XP Tahoma, sans-serif;
+  font-weight: 700;
+}
+
+#bottom-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1% 1% 2% 1%;
+  border-top: 3px solid #d4956a;
+  border-image: linear-gradient(to right, #0d379d, #d4956a 40%, #1342a4) 1;
+  width: 100%;
+}
+
+#Power {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+#Power:hover {
+  filter: brightness(1.1);
+}
+#Power:active {
+  filter: brightness(0.9);
+}
+
+#shutdown-container {
+  display: flex;
+  align-items: center;
+  font-family: Tahoma, Verdana, sans-serif;
+}
+
+#shutdown-p {
+  color: white;
+  padding: 5px 10px;
+  font-size: 18px;
+}
+
+#shutdown-p:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+#shutdown-container p {
+  font-size: 12px;
+  color: white;
+  margin: 0;
+}
+
+#left-section {
+  display: flex;
+  align-items: center;
+}
+
+#right-text {
+  font-family: Windows XP Tahoma, sans-serif;
+  font-size: 12px;
+  color: white;
+  margin: 0;
+  text-align: right;
+  pointer-events: none;
+}
+
+.loaded {
+  display: flex;
+  flex-direction: column;
+}
+
+.loaded span {
+  font-size: 24px;
+  color: white;
+  font-family: Tahoma, Verdana, sans-serif;
+
+  z-index: 1;
+}
+
+.loaded p {
+  font-size: 10px;
+  color: #00309c;
+  font-family: windows xp tahoma, sans-serif;
+
+  z-index: 1;
+}
+
+.loaded p:hover {
+  text-decoration: underline;
+}
+
+#Transi_panel {
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+#Transi_panel p {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  top: 60%;
+  left: 44%;
+  pointer-events: none;
+  font-size: x-large;
+  color: white;
+}
+
+#Transi_content {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+#Transi_log_off_content {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+#Transi_log_off {
+  position: relative;
+  top: 40%;
+  left: 5%;
+  pointer-events: none;
+  max-height: fit-content;
+  width: 23%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+#Transi_log_off img {
+  width: 250px;
+}
+
+#Transi_log_off p {
+  pointer-events: none;
+  font-size: x-large;
+  color: white;
+  padding-left: 20px;
+  font-family: Tahoma, Verdana, sans-serif;
+}
+
+.login-screen__submit img,
+.login-screen__question img {
+  width: 30px;
+  cursor: pointer;
+  border: none;
+  margin: auto;
+}
+
+.login-screen__submit,
+.login-screen__question {
+  border: none;
+  background: none;
+}
+
+.login-screen__password form {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.login-screen__password form *:focus {
+  outline: none;
+}
+
+.login-screen__password p {
+  font-size: 9px;
+  color: white;
+  margin: 0;
+  font-family: windows xp tahoma, sans-serif;
+  font-weight: 100;
+  margin-bottom: 5px;
+  margin-left: 5px;
+
+  letter-spacing: 0.5px;
+}
+
+.login-screen__password {
+  position: absolute;
+  top: 55%;
+  left: 14%;
+}
+
+#Password {
+  border-radius: 5px;
+  border: none;
+  box-shadow: 1px 1px 2px 0px rgba(46, 46, 46, 1);
+  height: 30px;
+  width: 170px;
+
+  display: block;
+  visibility: visible;
+  pointer-events: auto;
+
+  padding: 5px;
+
+  font-size: 20px;
+}

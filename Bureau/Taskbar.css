@@ -1,0 +1,38 @@
+#taskbar {
+  font-family: trebuc, sans-serif;
+  font-size: 12px;
+  color: white;
+  display: flex;
+  align-items: center;
+  border-radius: 2px;
+  height: 22px;
+  padding-left: 2px;
+  margin-bottom: 2px;
+  min-width: max-content;
+}
+
+.taskbar-item {
+  display: flex;
+  align-items: center;
+  border-radius: 2px;
+  height: 22px;
+  padding-left: 10px;
+  padding-right: 50px;
+  margin-bottom: 2px;
+  min-width: max-content;
+  background-color: rgba(57, 127, 240, 255);
+  box-shadow: rgba(0, 0, 0, 0.3) -1px 0px inset,
+    rgba(255, 255, 255, 0.2) 1px 1px 1px inset;
+}
+
+.taskbar-item img {
+  margin-right: 5px;
+}
+
+.taskbar-item:hover {
+  background-color: rgba(57, 150, 255, 255);
+}
+
+/* .taskbar-item.active {
+  background-color: rgba(26, 80, 183, 255);
+} */

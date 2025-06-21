@@ -1,0 +1,131 @@
+@keyframes fadeOutBlack {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes moveBlocks {
+  0% {
+    transform: translateX(-60px);
+  }
+  100% {
+    transform: translateX(250px);
+  }
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: black;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 1;
+  animation: fadeOutBlack 1.2s steps(12, end) forwards;
+}
+
+.fade-in-steps * {
+  animation: fadeInSteps 1.2s steps(40, end) forwards;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Tahoma, Verdana, sans-serif;
+}
+
+#loader {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 9999;
+  pointer-events: none;
+}
+
+#logo {
+  width: 25%;
+  margin-bottom: 8%;
+}
+
+#progress-bar {
+  width: 15%;
+  height: 3%;
+  border: 2px solid #a5a5a5;
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.progress-block {
+  width: 5%;
+  height: 80%;
+  background: #2838c4;
+  margin-right: 1%;
+  animation: moveBlocks 2.5s infinite steps(40);
+}
+
+.progress-block:nth-child(1) {
+  background: linear-gradient(
+    to bottom,
+    #141c62 10%,
+    #435cda 10% 20%,
+    #7690ee 20% 30%,
+    #849cf0 30% 40%,
+    #5a7aec 40% 50%,
+    #2838c4 60% 90%,
+    #19237a 100%
+  );
+}
+
+.progress-block:nth-child(2) {
+  background: linear-gradient(
+    to bottom,
+    #141c62 10%,
+    #435cda 10% 20%,
+    #7690ee 20% 30%,
+    #849cf0 30% 40%,
+    #5a7aec 40% 50%,
+    #5574e9 50% 60%,
+    #2838c4 60% 80%,
+    #19237a 100%
+  );
+}
+
+.progress-block:nth-child(3) {
+  background: linear-gradient(
+    to bottom,
+    #141c62 10%,
+    #435cda 10% 20%,
+    #7690ee 20% 30%,
+    #849cf0 30% 50%,
+    #5878ec 50% 60%,
+    #4f6ce4 60% 70%,
+    #2838c4 70% 90%,
+    #19237a 100%
+  );
+}
+
+#Copyright {
+  position: absolute;
+  width: 7%;
+  bottom: 5%;
+  right: 3%;
+}
+
+#Microsoft {
+  position: absolute;
+  width: 15%;
+  bottom: 5%;
+  left: 3%;
+}
