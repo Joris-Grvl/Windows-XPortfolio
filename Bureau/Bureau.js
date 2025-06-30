@@ -161,14 +161,18 @@ function openWindow(appName) {
       windowElement.style.width = "auto";
       windowElement.style.height = "auto";
     }
-  }
-
-  if (appName !== "Minesweeper") {
+  } else {
     makeResizable(windowElement);
     const header = windowElement.querySelector(".window-header");
     if (header) {
       header.setAttribute("ondblclick", `maximazeWindow('${appName}')`);
     }
+  }
+
+  if (appName === "Space Cadet Pinball") {
+    // Cache la fenêtre au départ
+    windowElement.style.visibility = "hidden";
+    windowElement.style.opacity = "0";
   }
 
   fetch(`/Open_Windows/${appName}/${appName}.html`)
@@ -640,6 +644,227 @@ function openRawWinamp() {
       }
     };
     taskbar.appendChild(taskbarItem);
+  }
+}
+
+function waitForGameToLoad() {
+  console.log("waitForGameToLoad started");
+
+  const iframe = document.getElementById("pinball-frame");
+  const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+
+  const observer = new MutationObserver(() => {
+    checkGameReady();
+  });
+
+  const styleObserver = new MutationObserver(() => {
+    checkGameReady();
+  });
+
+  function checkGameReady() {
+    try {
+      const canvas = iframeDoc.querySelector("canvas.emscripten#canvas");
+      const statusElement = iframeDoc.querySelector("#status");
+
+      console.log(
+        `Canvas found: ${!!canvas}, Status element found: ${!!statusElement}`
+      );
+
+      if (canvas) {
+        console.log(
+          `Canvas display: ${canvas.style.display}, Width: ${canvas.width}, Height: ${canvas.height}`
+        );
+      }
+
+      const isGameLoaded =
+        statusElement &&
+        (statusElement.innerHTML === "" ||
+          statusElement.style.display === "none") &&
+        canvas &&
+        canvas.style.display !== "none" &&
+        (canvas.width > 0 || canvas.clientWidth > 0);
+
+      console.log(`Game loaded: ${isGameLoaded}`);
+
+      if (isGameLoaded) {
+        // Arrête les observers
+        observer.disconnect();
+        styleObserver.disconnect();
+
+        const finalWidth = canvas.width || canvas.clientWidth || 600;
+        const finalHeight = canvas.height || canvas.clientHeight || 440;
+
+        console.log(`Final canvas dimensions: ${finalWidth}x${finalHeight}`);
+
+        // Redimensionne la fenêtre
+        applyCanvasDimensionsToWindow(finalWidth, finalHeight);
+        resizeWindow(finalWidth, finalHeight);
+
+        // Affiche la fenêtre après redimensionnement
+        setTimeout(() => {
+          showWindow();
+          hideLoading();
+        }, 100);
+
+        return;
+      }
+
+      if (canvas && !canvas.dataset.observed) {
+        canvas.dataset.observed = "true";
+        styleObserver.observe(canvas, {
+          attributes: true,
+          attributeFilter: ["style", "width", "height"],
+        });
+      }
+    } catch (e) {
+      console.error("Error accessing iframe:", e);
+      observer.disconnect();
+      styleObserver.disconnect();
+
+      // Utilise les dimensions par défaut et affiche la fenêtre
+      applyCanvasDimensionsToWindow(600, 440);
+      resizeWindow(600, 440);
+      setTimeout(() => {
+        showWindow();
+        hideLoading();
+      }, 100);
+    }
+  }
+
+  // Démarre l'observation
+  observer.observe(iframeDoc.body, {
+    childList: true,
+    subtree: true,
+    attributes: true,
+    attributeFilter: ["style"],
+  });
+
+  checkGameReady();
+
+  // Fallback
+  const fallbackTimeout = setTimeout(() => {
+    observer.disconnect();
+    styleObserver.disconnect();
+    console.log("Fallback: using default dimensions");
+    applyCanvasDimensionsToWindow(600, 440);
+    resizeWindow(600, 440);
+    showWindow();
+    hideLoading();
+  }, 30000);
+
+  const originalDisconnect = observer.disconnect;
+  observer.disconnect = function () {
+    clearTimeout(fallbackTimeout);
+    originalDisconnect.call(this);
+  };
+}
+
+function showWindow() {
+  const windowElement = window.parent.document.getElementById(
+    "window-Space Cadet Pinball"
+  );
+  const iframe = document.getElementById("pinball-frame");
+
+  if (windowElement) {
+    windowElement.style.visibility = "visible";
+    windowElement.style.opacity = "1";
+
+    console.log("Window is now visible");
+  }
+
+  if (iframe) {
+    iframe.style.visibility = "visible";
+  }
+}
+
+function hideLoading() {
+  const loading = document.getElementById("loading");
+  if (loading) {
+    loading.style.opacity = "0";
+    setTimeout(() => {
+      loading.style.display = "none";
+    }, 300);
+  }
+}
+
+function applyCanvasDimensionsToWindow(canvasWidth, canvasHeight) {
+  const headerHeight = 30;
+  const borderWidth = 3;
+  const totalWidth = canvasWidth + borderWidth;
+  const totalHeight = canvasHeight + headerHeight;
+
+  // Supprime les styles existants
+  const existingStyles = window.parent.document.querySelectorAll(
+    "style[data-pinball-resize]"
+  );
+  existingStyles.forEach((style) => style.remove());
+
+  // Applique le nouveau style
+  const style = document.createElement("style");
+  style.setAttribute("data-pinball-resize", "true");
+  style.textContent = `
+    #window-Space\\ Cadet\\ Pinball.window {
+      width: ${totalWidth}px !important;
+      height: ${totalHeight}px !important;
+      min-width: ${totalWidth}px !important;
+      min-height: ${totalHeight}px !important;
+      max-width: ${totalWidth}px !important;
+      max-height: ${totalHeight}px !important;
+    }
+    #window-Space\\ Cadet\\ Pinball {
+      height: ${canvasHeight}px !important;
+      overflow: hidden !important;
+    }
+  `;
+  window.parent.document.head.appendChild(style);
+
+  console.log(
+    `Canvas dimensions applied to CSS: ${canvasWidth}x${canvasHeight} -> Window: ${totalWidth}x${totalHeight}`
+  );
+
+  // Application immédiate des styles inline (sans setTimeout)
+  applyInlineStyles(canvasWidth, canvasHeight, totalWidth, totalHeight);
+}
+
+function applyInlineStyles(canvasWidth, canvasHeight, totalWidth, totalHeight) {
+  const windowElement = window.parent.document.getElementById(
+    "window-Space Cadet Pinball"
+  );
+
+  if (windowElement) {
+    windowElement.style.setProperty("width", `${totalWidth}px`, "important");
+    windowElement.style.setProperty("height", `${totalHeight}px`, "important");
+    console.log(
+      `Inline styles applied to window: ${totalWidth}x${totalHeight}`
+    );
+  }
+}
+
+function resizeWindow(canvasWidth, canvasHeight) {
+  let windowElement = window.parent.document.getElementById(
+    "window-Space Cadet Pinball"
+  );
+
+  if (!windowElement) {
+    windowElement = window.parent.document.querySelector(
+      '[data-app-name="Space Cadet Pinball"]'
+    );
+  }
+
+  if (windowElement) {
+    const headerHeight = 30;
+    const borderWidth = 3;
+    const totalWidth = canvasWidth + borderWidth;
+    const totalHeight = canvasHeight + headerHeight;
+
+    windowElement.style.width = totalWidth + "px";
+    windowElement.style.height = totalHeight + "px";
+
+    console.log(
+      `Window resized to: ${totalWidth}x${totalHeight} (canvas: ${canvasWidth}x${canvasHeight})`
+    );
+  } else {
+    console.warn("Could not find window elements");
   }
 }
 
